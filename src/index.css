@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap');
+@import "tailwindcss";
+
+:root {
+  font-family: 'Ubuntu Mono', 'Courier New', monospace;
+  line-height: 1.4;
+  font-weight: 400;
+  
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #0e0d0d;
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Terminal Animation Keyframes */
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* Realistic Terminal Output Animations */
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes terminal-glow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(242, 213, 207, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(242, 213, 207, 0.6), 0 0 15px rgba(242, 213, 207, 0.4);
+  }
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  1%, 3%, 5%, 7%, 9%, 11%, 13%, 15% {
+    opacity: 0.8;
+  }
+  2%, 4%, 6%, 8%, 10%, 12%, 14% {
+    opacity: 0.9;
+  }
+}
+
+/* Character-by-character typing animation */
+@keyframes char-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gradient Banner Animation */
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Green Gradient Banner for Hackbuild */
+.gradient-hackbuild-banner {
+  background: linear-gradient(
+    90deg,
+    #22c55e 0%,
+    #4ade80 40%,
+    #bbf7d0 100%
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+/* Animation Classes */
+.animate-fade {
+  animation: fade 2s;
+}
+
+.animate-fadein {
+  animation: fadein 0.8s;
+}
+
+.animate-fadein-terminal {
+  animation: fadein 0.8s;
+}
+
+.animate-fadeout {
+  animation: fadeout 0.8s ease-in 0.1s forwards;
+}
+
+.animate-blink {
+  animation: blink 1.4s step-end infinite;
+}
+
+/* Realistic Terminal Output Classes */
+.terminal-line {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #f2d5cf;
+  animation: typewriter 0.05s steps(1) forwards, terminal-glow 2s ease-in-out infinite alternate;
+}
+
+.terminal-line.complete {
+  border-right: none;
+  animation: terminal-glow 2s ease-in-out infinite alternate;
+}
+
+.terminal-char {
+  opacity: 0;
+  animation: char-fade-in 0.1s ease-out forwards;
+}
+
+.terminal-output {
+  position: relative;
+}
+
+.terminal-output::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(242, 213, 207, 0.4), transparent);
+  animation: scan-line 4s linear infinite;
+  pointer-events: none;
+}
+
+.terminal-flicker {
+  animation: flicker 0.1s infinite;
+}
+
+/* Progressive line reveal */
+.terminal-line-reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadein 0.3s ease-out forwards;
+}
+
+/* Typing delays for realistic timing */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+.delay-7 { animation-delay: 0.7s; }
+.delay-8 { animation-delay: 0.8s; }
+.delay-9 { animation-delay: 0.9s; }
+.delay-10 { animation-delay: 1.0s; }
+
+/* Character delays for typewriter effect */
+.char-delay-1 { animation-delay: 0.05s; }
+.char-delay-2 { animation-delay: 0.10s; }
+.char-delay-3 { animation-delay: 0.15s; }
+.char-delay-4 { animation-delay: 0.20s; }
+.char-delay-5 { animation-delay: 0.25s; }
+.char-delay-6 { animation-delay: 0.30s; }
+.char-delay-7 { animation-delay: 0.35s; }
+.char-delay-8 { animation-delay: 0.40s; }
+.char-delay-9 { animation-delay: 0.45s; }
+.char-delay-10 { animation-delay: 0.50s; }
+
+/* Banner Styles */
+.gradient-banner {
+  background: linear-gradient(
+    45deg,
+    #4285f4,  /* Google Blue */
+    #ea4335,  /* Google Red */
+    #fbbc04,  /* Google Yellow */
+    #34a853,  /* Google Green */
+    #9c27b0,  /* Purple */
+    #ff6d01   /* Orange */
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+.banner-container {
+  position: relative;
+}
+
+.banner-text {
+  margin: 0;
+  padding: 0;
+}
+
+/* Terminal Specific Styles */
+.terminal-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Ubuntu Mono', 'Courier New', monospace;
+  font-weight: 500;
+  flex: 1;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  caret-color: #f2d5cf;
+  caret-shape: block;
+  color: #f2d5cf;
+}
+
+.terminal-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Enhanced blinking cursor */
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.2em;
+  background-color: #f2d5cf;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+  vertical-align: text-bottom;
+}
+
+.terminal-cursor.thick {
+  width: 10px;
+  background-color: rgba(242, 213, 207, 0.8);
+  box-shadow: 0 0 5px rgba(242, 213, 207, 0.5);
+}
+
+/* Blinking cursor animation */
+@keyframes cursor-blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Custom scrollbar for terminal */
+.terminal-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-container::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.terminal-container::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 4px;
+}
+
+.terminal-container::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
+
+/* Terminal Screen Effects */
+.terminal-screen {
+  position: relative;
+  background: radial-gradient(ellipse at center, #0e0d0d 0%, #000000 100%);
+  overflow: hidden;
+}
+
+.terminal-screen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(transparent 50%, rgba(0, 255, 0, 0.03) 50%),
+    linear-gradient(90deg, transparent 50%, rgba(255, 0, 0, 0.03) 50%);
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+}
+
+/* Command prompt styling */
+.terminal-prompt {
+  color: #89b4fa;
+  font-weight: 700;
+}
+
+.terminal-path {
+  color: #a6e3a1;
+}
+
+.terminal-symbol {
+  color: #f38ba8;
+  font-weight: 700;
+}
+
+/* Output text colors */
+.terminal-success {
+  color: #a6e3a1;
+}
+
+.terminal-error {
+  color: #f38ba8;
+}
+
+.terminal-warning {
+  color: #f9e2af;
+}
+
+.terminal-info {
+  color: #89b4fa;
+}
+
+/* Responsive Banner */
+@media (max-width: 768px) {
+  .gradient-banner {
+    font-size: 0.5rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .gradient-banner {
+    font-size: 0.75rem;
+    line-height: 1.05;
+  }
+}
+
+@media (min-width: 1025px) {
+  .gradient-banner {
+    font-size: 1rem;
+    line-height: 1.05;
+  }
+}
+
+/* Utility classes for realistic terminal timing */
+.typing-fast { animation-duration: 0.03s; }
+.typing-normal { animation-duration: 0.05s; }
+.typing-slow { animation-duration: 0.08s; }
+.typing-hesitant { animation-duration: 0.12s; }
+
+/* Command execution animation */
+@keyframes command-execute {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.command-executing {
+  animation: command-execute 0.3s ease-out;
+}
+
+/* Loading dots animation for commands */
+@keyframes loading-dots {
+  0%, 20% {
+    color: transparent;
+    text-shadow: 0.25em 0 0 transparent, 0.5em 0 0 transparent;
+  }
+  40% {
+    color: #f2d5cf;
+    text-shadow: 0.25em 0 0 transparent, 0.5em 0 0 transparent;
+  }
+  60% {
+    text-shadow: 0.25em 0 0 #f2d5cf, 0.5em 0 0 transparent;
+  }
+  80%, 100% {
+    text-shadow: 0.25em 0 0 #f2d5cf, 0.5em 0 0 #f2d5cf;
+  }
+}
+
+.custom-terminal-font {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 200;
+    font-size: .90rem;
+    letter-spacing: 0.7px;
+}
+
+
+.loading-dots::after {
+  content: '...';
+  animation: loading-dots 1.5s infinite;
+}
