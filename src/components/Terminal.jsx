@@ -145,10 +145,10 @@ const Terminal = () => {
             '[https://xqyet.dev/]'
         ];
     } else if (baseCommand === 'curl discord.xqyet') {
-        window.open('https://fakecrime.bio/xqyet', '_blank');
+        window.open('https://redacted.bio/xqyet', '_blank');
         response = [
             'Curling to discord.xqyet...',
-            '[https://fakecrime.bio/xqyet]'
+            '[https://redacted.bio/xqyet]'
         ];
     }
 

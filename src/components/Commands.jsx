@@ -5,7 +5,7 @@ const Commands = () => {
     'help': 'Show available commands',
     'id xqyet': 'About XQYET',
     'boot system': 'The xqyet.dev virtual machine',
-    'curl discord.xqyet': 'The fakecrime/bio dev page',
+    'curl discord.xqyet': 'The redacted.bio dev page',
     'fetch socials': 'my links',
     'clear': 'Clear terminal',
     'whoami': 'Current user info',
@@ -128,7 +128,7 @@ const Commands = () => {
       {
           name: 'Telegram',
           className: 'telegram',
-          url: 'https://i.fakecrime.bio/jtk57',
+          url: 'https://redacted.bio/xqyet',
           label: 'Telegram: /NC_CORPO'
       },
       {
@@ -151,7 +151,7 @@ const Commands = () => {
       ],
     'curl discord.xqyet': [
           'Launching web interface...',
-          '[✅ Opening https://fakecrime.bio/xqyet in new tab]'
+          '[✅ Opening https://redacted.bio/xqyet in new tab]'
       ],
     'fetch socials': [
       <div key="gdg-socials-list" className="output w-full text-[#c6d0f5] animate-fadein">
