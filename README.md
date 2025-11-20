@@ -1,4 +1,4 @@
-# xqyet.terminal
+# xque.terminal
 
 A [virtual terminal interface](https://terminalsystems.net/) built with React & Vite.
 
@@ -6,4 +6,4 @@ A [virtual terminal interface](https://terminalsystems.net/) built with React & 
 
 ---
 
-Made with ❤️ by xqyet
+Made with ❤️ by xque

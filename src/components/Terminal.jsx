@@ -18,32 +18,36 @@ const Terminal = () => {
   const terminalRef = useRef(null);
 
   const gdgBanner = `
-██╗  ██╗ ██████╗ ██╗   ██╗ ███████╗ ████████╗
-╚██╗██╔╝██╔═████╗╚██╗ ██╔╝ ██╔════╝ ╚══██╔══╝
- ╚███╔╝ ██║██╔██║ ╚████╔╝  █████╗      ██║
- ██╔██╗ ████╔╝██║  ╚██╔╝   ██╔══╝      ██║
-██╔╝ ██╗╚██████╔╝   ██║    ███████╗    ██║
-╚═╝  ╚═╝     ╚═╝    ╚═╝    ╚══════╝    ╚═╝
+██╗  ██╗ ██████╗ ██╗   ██╗███████╗
+╚██╗██╔╝██╔═══██╗██║   ██║██╔════╝
+ ╚███╔╝ ██║   ██║██║   ██║█████╗
+ ██╔██╗ ██║▄▄ ██║██║   ██║██╔══╝
+██╔╝ ██╗╚██████╔╝╚██████╔╝███████╗
+╚═╝  ╚═╝ ╚══▀▀═╝  ╚═════╝ ╚══════╝
+
+
+
 `;
 
     const hackbuildBannerTextLocal = `
-██╗  ██╗ ██████╗ ██╗   ██╗ ███████╗ ████████╗
-╚██╗██╔╝██╔═████╗╚██╗ ██╔╝ ██╔════╝ ╚══██╔══╝
- ╚███╔╝ ██║██╔██║ ╚████╔╝  █████╗      ██║   
- ██╔██╗ ████╔╝██║  ╚██╔╝   ██╔══╝      ██║   
-██╔╝ ██╗╚██████╔╝   ██║    ███████╗    ██║   
-╚═╝  ╚═╝     ╚═╝    ╚═╝    ╚══════╝    ╚═╝   
+██╗  ██╗ ██████╗ ██╗   ██╗███████╗
+╚██╗██╔╝██╔═══██╗██║   ██║██╔════╝
+ ╚███╔╝ ██║   ██║██║   ██║█████╗
+ ██╔██╗ ██║▄▄ ██║██║   ██║██╔══╝
+██╔╝ ██╗╚██████╔╝╚██████╔╝███████╗
+╚═╝  ╚═╝ ╚══▀▀═╝  ╚═════╝ ╚══════╝
+
 `;
 
 
 
   const bootMessages = [
-    'Initializing XQYET Terminal...',
+    'Initializing XQUE Terminal...',
     'Loading kernel modules...',
     'Starting system services...',
     'Mounting filesystems...',
     'Network interfaces up...',
-    'Welcome to XQYET Terminal v1.0.1',
+    'Welcome to XQUE Terminal v1.0.1',
     '',
     gdgBanner,
     '',
@@ -139,23 +143,23 @@ const Terminal = () => {
       setCommandHistory([]);
       return;
     } else if (baseCommand === 'boot system') {
-        window.open('https://xqyet.dev', '_blank');
+        window.open('https://xque.dev', '_blank');
         response = [
             'Launching Virtual Machine...',
-            '[https://xqyet.dev/]'
+            '[https://xque.dev/]'
         ];
-    } else if (baseCommand === 'curl discord.xqyet') {
-        window.open('https://redacted.bio/xqyet', '_blank');
+    } else if (baseCommand === 'curl discord.xque') {
+        window.open('https://redacted.bio/xque', '_blank');
         response = [
-            'Curling to discord.xqyet...',
-            '[https://redacted.bio/xqyet]'
+            'Curling to discord.xque...',
+            '[https://redacted.bio/xque]'
         ];
     }
 
  else if (baseCommand === 'help') {
       response = [
         <div key="help-main" className="output w-full animate-fadein text-[#c6d0f5]">
-              <div className="text-[#fab387] font-normal mb-4 text-lg">XQYET Terminal</div>
+              <div className="text-[#fab387] font-normal mb-4 text-lg">XQUE Terminal</div>
 
           
           <div className="space-y-4">
@@ -174,7 +178,7 @@ const Terminal = () => {
               <div className="flex flex-col sm:flex-row">
               </div>
               <div className="flex flex-col sm:flex-row">
-                <span className="text-[#a6e3a1] font-mono font-normal sm:w-48 flex-shrink-0">npm uninstall xqyet</span>
+                <span className="text-[#a6e3a1] font-mono font-normal sm:w-48 flex-shrink-0">npm uninstall xque</span>
                 <span className="text-[#6c7086] sm:ml-4 mt-1 sm:mt-0">- how did I try</span>
               </div>
             </div>
@@ -201,7 +205,7 @@ const Terminal = () => {
           window.open('https://www.youtube.com/playlist?list=PLLgmgkxiK6hM47PEwFHDT6R81-oBiqWkm', '_blank');
           response = [
               'Initializing music.library...',
-              '[xqyets music playlist launched]'
+              '[xque music playlist launched]'
           ];
       } else if (resourceCommands[command]) {
           const resource = resourceCommands[command];

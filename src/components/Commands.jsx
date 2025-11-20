@@ -3,9 +3,9 @@ import React from 'react';
 const Commands = () => {
   const availableCommands = {
     'help': 'Show available commands',
-    'id xqyet': 'About XQYET',
-    'boot system': 'The xqyet.dev virtual machine',
-    'curl discord.xqyet': 'The redacted.bio dev page',
+    'id xque': 'About XQUE',
+    'boot system': 'The xque.dev virtual machine',
+    'curl discord.xque': 'The redacted.bio dev page',
     'fetch socials': 'my links',
     'clear': 'Clear terminal',
     'whoami': 'Current user info',
@@ -116,42 +116,42 @@ const Commands = () => {
     {
       name: 'Website',
       className: 'website',
-          url: 'https://xqyet.dev/',
+          url: 'https://xque.dev/',
       label: 'Twitter: @gdgvit'
     },
     {
       name: 'GitHub',
       className: 'github',
         url: 'https://github.com/xqyet',
-      label: 'GitHub: /xqyet'
+      label: 'GitHub: /xque'
       },
       {
           name: 'Telegram',
           className: 'telegram',
-          url: 'https://redacted.bio/xqyet',
+          url: 'https://redacted.bio/xque',
           label: 'Telegram: /NC_CORPO'
       },
       {
           name: 'Steam',
           className: 'steam',
           url: 'https://steamcommunity.com/id/xqyet/', 
-              label: 'Steam: /xqyet'
+              label: 'Steam: /xque'
       },
   ];
 
   const commandResponses = {
-    'id xqyet': [
-      'I am a developer.',
+    'id xque': [
+      'nunya',
      
     ],
       'boot system': [
-          'Booting XQYET virtual system...',
+          'Booting XQUE virtual system...',
           'Launching web interface...',
-          '[✅ Opening https://xqyet.dev in new tab]'
+          '[✅ Opening https://xque.dev in new tab]'
       ],
-    'curl discord.xqyet': [
+    'curl discord.xque': [
           'Launching web interface...',
-          '[✅ Opening https://redacted.bio/xqyet in new tab]'
+          '[✅ Opening https://redacted.bio/xque in new tab]'
       ],
     'fetch socials': [
       <div key="gdg-socials-list" className="output w-full text-[#c6d0f5] animate-fadein">
@@ -190,7 +190,7 @@ const Commands = () => {
       </div>
     ],
     'date': ['' + new Date().toString(), '(Maybe you should go to one too)'],
-      'npm uninstall xqyet': [
+      'npm uninstall xque': [
           <div
               key="guestbook-video"
               className="mt-2 w-[200px] h-auto"
